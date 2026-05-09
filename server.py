@@ -398,7 +398,7 @@ logger = logging.getLogger(__name__)
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
-app.mount("/assets", StaticFiles(directory="frontend/assets"), name="assets")
+
 
 @app.get("/")
 async def serve_frontend():
