@@ -1,0 +1,6 @@
+/* App-level resets — most styling is in index.css */
+.App {
+    min-height: 100vh;
+    background: #060608;
+    color: #ffffff;
+}

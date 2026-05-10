@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   As Game & GSM — Global Theme (Electric / Neon, Dark)
+   ============================================================ */
+
+@layer base {
+    :root {
+        /* Shadcn variables mapped to the dark neon system so that
+       default shadcn components (Dialog, Input, etc.) look on-brand. */
+        --background: 240 10% 3%;
+        --foreground: 0 0% 100%;
+
+        --card: 240 12% 9%;
+        --card-foreground: 0 0% 100%;
+
+        --popover: 240 12% 7%;
+        --popover-foreground: 0 0% 100%;
+
+        --primary: 187 100% 50%;
+        --primary-foreground: 240 10% 3%;
+
+        --secondary: 240 10% 12%;
+        --secondary-foreground: 0 0% 100%;
+
+        --muted: 240 10% 12%;
+        --muted-foreground: 225 8% 64%;
+
+        --accent: 281 100% 58%;
+        --accent-foreground: 0 0% 100%;
+
+        --destructive: 346 100% 58%;
+        --destructive-foreground: 0 0% 100%;
+
+        --border: 240 10% 15%;
+        --input: 240 10% 14%;
+        --ring: 187 100% 50%;
+
+        --radius: 0.75rem;
+    }
+
+    .dark {
+        --background: 240 10% 3%;
+        --foreground: 0 0% 100%;
+        --card: 240 12% 9%;
+        --card-foreground: 0 0% 100%;
+        --popover: 240 12% 7%;
+        --popover-foreground: 0 0% 100%;
+        --primary: 187 100% 50%;
+        --primary-foreground: 240 10% 3%;
+        --secondary: 240 10% 12%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 240 10% 12%;
+        --muted-foreground: 225 8% 64%;
+        --accent: 281 100% 58%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 346 100% 58%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 240 10% 15%;
+        --input: 240 10% 14%;
+        --ring: 187 100% 50%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    html,
+    body {
+        background-color: #060608;
+        color: #ffffff;
+        font-family: "Outfit", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        scroll-behavior: smooth;
+    }
+
+    ::selection {
+        background: rgba(0, 229, 255, 0.3);
+        color: #ffffff;
+    }
+}
+
+/* Typography helpers */
+.font-display {
+    font-family: "Unbounded", sans-serif;
+    letter-spacing: -0.02em;
+}
+.font-mono {
+    font-family: "JetBrains Mono", monospace;
+}
+
+/* Neon gradient text for headlines */
+.neon-text {
+    background: linear-gradient(
+        92deg,
+        #00e5ff 0%,
+        #ffffff 40%,
+        #b829ff 95%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Subtle animated grid background for the hero */
+.grid-bg {
+    background-image:
+        linear-gradient(rgba(0, 229, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(
+            90deg,
+            rgba(0, 229, 255, 0.08) 1px,
+            transparent 1px
+        );
+    background-size: 48px 48px;
+    mask-image: radial-gradient(
+        ellipse at center,
+        black 45%,
+        transparent 75%
+    );
+}
+
+/* Neon glow helpers */
+.glow-cyan {
+    box-shadow:
+        0 0 0 1px rgba(0, 229, 255, 0.35),
+        0 10px 40px -10px rgba(0, 229, 255, 0.45);
+}
+.glow-purple {
+    box-shadow:
+        0 0 0 1px rgba(184, 41, 255, 0.35),
+        0 10px 40px -10px rgba(184, 41, 255, 0.45);
+}
+
+/* Marquee */
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+.marquee-track {
+    animation: marquee-scroll 32s linear infinite;
+}
+
+/* Entrance animation */
+@keyframes rise-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.rise-in {
+    animation: rise-in 0.8s ease-out both;
+}
+
+/* Floating book-a-repair */
+@keyframes soft-pulse {
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 0 rgba(0, 229, 255, 0.55),
+            0 10px 30px -10px rgba(0, 229, 255, 0.5);
+    }
+    50% {
+        box-shadow:
+            0 0 0 14px rgba(0, 229, 255, 0),
+            0 10px 30px -10px rgba(0, 229, 255, 0.5);
+    }
+}
+.pulse-ring {
+    animation: soft-pulse 2.6s ease-in-out infinite;
+}
+
+/* Hide scrollbar on marquee wrap */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Outline style button */
+.btn-neon-outline {
+    position: relative;
+    isolation: isolate;
+}
+.btn-neon-outline::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #00e5ff, #b829ff);
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+}
