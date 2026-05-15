@@ -75,8 +75,8 @@ export default function Contact() {
                 <div className="text-[10px] uppercase tracking-[0.22em] text-white/40 font-bold">
                   {pick("Phone", "Telefon")}
                 </div>
-                <a href="tel:+48515703292" className="text-white hover:text-cyan-300 transition">
-                  +48 515 703 292
+                <a href="tel:+48000000000" className="text-white hover:text-cyan-300 transition">
+                  +48 000 000 000
                 </a>
               </div>
             </li>
@@ -86,8 +86,8 @@ export default function Contact() {
               </span>
               <div>
                 <div className="text-[10px] uppercase tracking-[0.22em] text-white/40 font-bold">E-mail</div>
-                <a href="mailto:sklep@asgamegsm.pl" className="text-white hover:text-fuchsia-300 transition">
-                  sklep@asgamegsm.pl
+                <a href="mailto:info@example.com" className="text-white hover:text-fuchsia-300 transition">
+                  info@example.com
                 </a>
               </div>
             </li>
@@ -101,8 +101,8 @@ export default function Contact() {
                 </div>
                 <div className="text-white">
                   {pick(
-                    "ul. Litewska 16u-E, 51-354 Wrocław",
-                    "ul. Litewska 16u-E, 51-354 Wrocław"
+                    "ul. Przykładowa 1, 00-000 Warszawa",
+                    "ul. Przykładowa 1, 00-000 Warszawa"
                   )}
                 </div>
               </div>

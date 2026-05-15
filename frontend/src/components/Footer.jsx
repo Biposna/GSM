@@ -79,12 +79,12 @@ export default function Footer() {
               {pick("Store", "Sklep")}
             </div>
             <ul className="space-y-2 text-sm text-white/70">
-              <li>{pick("ul. Litewska 16u-E, 51-354 Wrocław", "ul. Litewska 16u-E, 51-354 Wrocław")}</li>
+              <li>{pick("ul. Przykładowa 1, 00-000 Warszawa", "ul. Przykładowa 1, 00-000 Warszawa")}</li>
               <li>
-                <a href="tel:+48515703292" className="hover:text-cyan-300">+48 515 703 292</a>
+                <a href="tel:+48000000000" className="hover:text-cyan-300">+48 000 000 000</a>
               </li>
               <li>
-                <a href="mailto:sklep@asgamegsm.pl" className="hover:text-fuchsia-300">sklep@asgamegsm.pl</a>
+                <a href="mailto:info@example.com" className="hover:text-fuchsia-300">info@example.com</a>
               </li>
               <li>{pick("Mon – Sat · 10:00 – 20:00", "Pon – Sob · 10:00 – 20:00")}</li>
             </ul>
